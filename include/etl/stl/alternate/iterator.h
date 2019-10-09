@@ -34,7 +34,7 @@ SOFTWARE.
 
 #include "../../platform.h"
 
-#include <string.h>
+// TODO REMOVE #include <string.h>
 #include "../../type_traits.h"
 
 #if defined(ETL_IN_UNIT_TEST)

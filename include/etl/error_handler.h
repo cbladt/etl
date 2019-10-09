@@ -36,7 +36,7 @@ SOFTWARE.
 /// Error handler for when throwing exceptions is not required.
 ///\ingroup utilities
 
-#include <assert.h>
+#include <Assert.hpp>
 
 #include "platform.h"
 #include "exception.h"
@@ -139,7 +139,7 @@ namespace etl
     #if defined(NDEBUG)
       #define ETL_ASSERT(b, e)                                                           // Does nothing.
     #else
-      #define ETL_ASSERT(b, e) assert((b))                                               // If the condition fails, asserts.
+      #define ETL_ASSERT(b, e) BLibC::Assert((b))                                               // If the condition fails, asserts.
     #endif
   #endif
 #endif

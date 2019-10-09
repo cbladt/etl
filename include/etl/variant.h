@@ -33,7 +33,7 @@ SOFTWARE.
 
 #include <stdint.h>
 
-#include <new>
+// TODO REMOVE #include <new>
 
 #include "platform.h"
 #include "array.h"

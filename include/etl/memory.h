@@ -37,9 +37,9 @@ SOFTWARE.
 
 #include "stl/iterator.h"
 
-#include <string.h>
+// TODO REMOVE #include <string.h>
 
-#include <new>
+// TODO REMOVE #include <new>
 
 ///\defgroup memory memory
 ///\ingroup etl

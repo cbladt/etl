@@ -33,7 +33,7 @@ SOFTWARE.
 
 #include "../../platform.h"
 
-#include <string.h>
+#include <String.hpp>
 
 #include "../../type_traits.h"
 
@@ -144,7 +144,7 @@ namespace std
 
     const size_t length = (se - sb);
 
-    return TIterator2(memmove(de - length, sb, sizeof(value_t) * length));
+    return TIterator2(BLibC::MemoryMove(de - length, sb, sizeof(value_t) * length));
   }
 
   // Other iterator
@@ -333,8 +333,8 @@ namespace std
   template<typename TIterator, typename TValue>
   typename etl::enable_if<(etl::is_same<char, TValue>::value || etl::is_same<unsigned char, TValue>::value) && etl::is_pointer<TIterator>::value, void>::type
     fill(TIterator first, TIterator last, const TValue& value)
-  {
-    memset(first, value, last - first);
+  {    
+    BLibC::MemorySet(first, value, last - first);
   }
 
   //***************************************************************************
@@ -765,6 +765,28 @@ namespace std
           }
       }
       return result;
+  }
+
+  template<class BidirIt>
+  void reverse(BidirIt first, BidirIt last)
+  {
+      while ((first != last) && (first != --last)) {
+          std::iter_swap(first++, last);
+      }
+  }
+
+  // NOTE Compiling with -ffast-math could break this.
+  template <typename T>
+  int isnan(T x)
+  {
+      return x != x;
+  }
+
+  // NOTE Compiling with -ffast-math could break this.
+  template <typename T>
+  int isinf(T x)
+  {
+      return !isnan(x) && isnan(x - x);
   }
 }
 
