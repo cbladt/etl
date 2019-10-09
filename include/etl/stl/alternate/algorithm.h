@@ -745,6 +745,27 @@ namespace std
 
     return ETLSTD::search(first, last, search_first, search_last, compare());
   }
+
+  template<class ForwardIt1, class ForwardIt2, class BinaryPredicate>
+  ForwardIt1 find_end(ForwardIt1 first, ForwardIt1 last,
+                      ForwardIt2 s_first, ForwardIt2 s_last,
+                      BinaryPredicate p)
+  {
+      if (s_first == s_last)
+          return last;
+      ForwardIt1 result = last;
+      while (true) {
+          ForwardIt1 new_result = std::search(first, last, s_first, s_last, p);
+          if (new_result == last) {
+              break;
+          } else {
+              result = new_result;
+              first = result;
+              ++first;
+          }
+      }
+      return result;
+  }
 }
 
 #endif

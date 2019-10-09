@@ -443,7 +443,7 @@ SOFTWARE.
 
   //***************************************************************************
   // float
-  template<>
+  /*template<>
   class numeric_limits<float> : public etl_floating_point_type<float>
   {
   public:
@@ -470,11 +470,11 @@ SOFTWARE.
   const int numeric_limits<float>::min_exponent = FLT_MIN_EXP;
   const int numeric_limits<float>::min_exponent10 = FLT_MIN_10_EXP;
   const int numeric_limits<float>::max_exponent = FLT_MAX_EXP;
-  const int numeric_limits<float>::max_exponent10 = FLT_MAX_10_EXP;
+  const int numeric_limits<float>::max_exponent10 = FLT_MAX_10_EXP;*/
 
   //***************************************************************************
   // double
-  template<>
+  /*template<>
   class numeric_limits<double> : public etl_floating_point_type<double>
   {
   public:
@@ -501,11 +501,11 @@ SOFTWARE.
   const int numeric_limits<double>::min_exponent = DBL_MIN_EXP;
   const int numeric_limits<double>::min_exponent10 = DBL_MIN_10_EXP;
   const int numeric_limits<double>::max_exponent = DBL_MAX_EXP;
-  const int numeric_limits<double>::max_exponent10 = DBL_MAX_10_EXP;
+  const int numeric_limits<double>::max_exponent10 = DBL_MAX_10_EXP;*/
 
   //***************************************************************************
   // long double
-  template<>
+  /*template<>
   class numeric_limits<long double> : public etl_floating_point_type<long double>
   {
   public:
@@ -532,7 +532,7 @@ SOFTWARE.
   const int numeric_limits<long double>::min_exponent = LDBL_MIN_EXP;
   const int numeric_limits<long double>::min_exponent10 = LDBL_MIN_10_EXP;
   const int numeric_limits<long double>::max_exponent = LDBL_MAX_EXP;
-  const int numeric_limits<long double>::max_exponent10 = LDBL_MAX_10_EXP;
+  const int numeric_limits<long double>::max_exponent10 = LDBL_MAX_10_EXP;*/
 }
 
 #endif
